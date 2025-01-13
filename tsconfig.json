@@ -1,0 +1,18 @@
+{
+  "files": [],
+  "references": [
+    { "path": "./tsconfig.app.json" },
+    { "path": "./tsconfig.node.json" }
+  ],
+  "compilerOptions": {
+    "module": "ESNext", // For ES module syntax
+    "target": "ESNext",
+    "strict": true,
+    "types": ["cypress","vite"],
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    
+  },
+  "include": ["cypress.config.ts"]
+}
