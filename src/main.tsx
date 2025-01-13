@@ -87,7 +87,7 @@ createRoot(document.getElementById('root')!).render(
 <RecoilCounter></RecoilCounter>
 </RecoilRoot> */}
 {/* <LazyComponents></LazyComponents> */}
-{/* <HelloWorld></HelloWorld> */}
+<HelloWorld></HelloWorld>
 {/* <MyButton label="Click Me"></MyButton> */}
 
 {/* 30-12-2024 Factory Pattern - Conditional based component rendering */}
