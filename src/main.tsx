@@ -48,6 +48,22 @@ import ObserverMain from './Components/DesignPatterns/ObserverPattern/ObserverMa
 import TabsAsCompound from './Components/DesignPatterns/CompundPattern/CompoundPatternMain.tsx'
 import LoginForm from './Components/CypressTest/CYLogin.tsx'
 
+import * as Sentry from "@sentry/react";
+ 
+Sentry.init({
+dsn: "https://499df78f7f97e8d5efe8db1ef2398329@o4508639779946496.ingest.us.sentry.io/4508639784665088",
+  integrations: [
+    Sentry.browserTracingIntegration(),
+    Sentry.replayIntegration(),
+  ],
+  // Tracing
+  tracesSampleRate: 1.0, //  Capture 100% of the transactions
+  // Set 'tracePropagationTargets' to control for which URLs distributed tracing should be enabled
+  tracePropagationTargets: ["localhost", /^https:\/\/yourserver\.io\/api/],
+  // Session Replay
+  replaysSessionSampleRate: 0.1, // This sets the sample rate at 10%. You may want to change it to 100% while in development and then sample at a lower rate in production.
+  replaysOnErrorSampleRate: 1.0, // If you're not already sampling the entire session, change the sample rate to 100% when sampling sessions where errors occur.
+});
 
 const user = { username: "JohnDoe", loggedIn: true, id: '24234324' }; // Mocked user data
 const queryClient = new QueryClient();
@@ -88,7 +104,7 @@ createRoot(document.getElementById('root')!).render(
 </RecoilRoot> */}
 {/* <LazyComponents></LazyComponents> */}
 <HelloWorld></HelloWorld>
-{/* <MyButton label="Click Me"></MyButton> */}
+<MyButton label="Click Me"></MyButton>
 
 {/* 30-12-2024 Factory Pattern - Conditional based component rendering */}
 {/* <FactoryPattern></FactoryPattern>

@@ -5,14 +5,18 @@
     { "path": "./tsconfig.node.json" }
   ],
   "compilerOptions": {
+    "typeRoots": ["./node_modules/@types", "./types"],
     "module": "ESNext", // For ES module syntax
     "target": "ESNext",
     "strict": true,
-    "types": ["cypress","vite"],
+    "types": ["cypress","vite","jest", "@testing-library/jest-dom", "@testing-library/user-event"],
     "moduleResolution": "node",
     "esModuleInterop": true,
     "skipLibCheck": true,
-    
+    "jsx": "react-jsx", // Use "react" if you're not using React 17+
+    "allowJs": true,    // Enables JavaScript files to be compiled
+    "forceConsistentCasingInFileNames": true,
+    "allowSyntheticDefaultImports": true,
   },
   "include": ["cypress.config.ts"]
 }

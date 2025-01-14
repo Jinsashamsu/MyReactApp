@@ -1,5 +1,5 @@
+import '@testing-library/jest-dom'; // Import jest-dom for custom matchers
 import { render, screen } from '@testing-library/react';
-import '@testing-library/jest-dom';  // To enable custom matchers
 import userEvent from '@testing-library/user-event';
 import MyButton from '../Components/MyButton';
 
